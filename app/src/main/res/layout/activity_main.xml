@@ -2,38 +2,274 @@
 <ScrollView android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android" >
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/white"
     tools:context=".ui.MainActivity">
 
 
-    <com.kluivert.weada.customViews.Poppins
+    <ProgressBar
+        android:id="@+id/progBar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="City name"
-        android:textSize="22sp"
-        android:layout_marginStart="16dp"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/colorPrimaryDark"
+        />
+
+    <RelativeLayout
+        android:id="@+id/datalayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="150dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/namebak"
+        >
+
+        <com.kluivert.weada.customViews.Poppins
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weada"
+            android:textSize="22sp"
+            android:layout_marginStart="35dp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            />
+
+    </LinearLayout>
+
+
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/wetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2019-09-07 08:14"
+        android:textSize="14sp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="130dp"
+       />
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/welocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ughelli"
+        android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="160dp"
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="210dp"
+        android:layout_marginStart="35dp"
+        android:src="@drawable/cloudy"
+        />
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/wedesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sunny"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="220dp"
+        />
+
+        <RelativeLayout
+            tools:visibility="gone"
+            android:id="@+id/errorlayout"
+            android:layout_width="300dp"
+            android:layout_height="450dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="100dp"
+            >
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animation_view1"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            app:lottie_fileName="nointercon.json"
+            app:lottie_loop="true"
+            app:lottie_autoPlay="true" />
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="45dp"
+            android:background="@drawable/namebak"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="350dp"
+            android:text="@string/retry"
+            android:textColor="@color/white"
+            />
+
+        </RelativeLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/animation_view"
+        android:layout_width="150dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="120dp"
+        android:layout_alignParentEnd="true"
+        app:lottie_fileName="clouds.json"
+        app:lottie_loop="true"
+        app:lottie_autoPlay="true" />
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="350dp"
+        android:src="@drawable/weatherapp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="240dp"
+
+        />
+
+
+    <View
+        android:layout_width="50dp"
+        android:layout_height="4dp"
+        android:background="@color/black"
+        android:layout_marginTop="400dp"
+        android:layout_marginStart="35dp"
+        />
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/wetemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="25"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginStart="35dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="420dp"
+        />
+    <ImageView
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:src="@drawable/blakcircle"
+        android:layout_marginTop="430dp"
+        android:layout_marginStart="90dp"
         />
 
     <com.kluivert.weada.customViews.Poppins
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="2019-09-07 08:14"
-        android:textSize="14sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:text="C"
+        android:textSize="35sp"
+        android:textStyle="bold"
+        android:layout_marginStart="100dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="420dp"
+        />
+
+
+<ImageView
+    android:layout_width="20dp"
+    android:layout_height="20dp"
+    android:layout_marginTop="490dp"
+    android:layout_marginStart="35dp"
+    android:src="@drawable/humid"
+    />
+
+   <com.kluivert.weada.customViews.Poppins
+       android:id="@+id/wehumid"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="90"
+       android:layout_marginTop="490dp"
+       android:layout_marginStart="65dp"
+       android:textSize="15sp"
+       android:textStyle="bold"
+       android:textColor="@color/lytblack"
        />
 
 
+ <View
+     android:layout_width="3dp"
+     android:layout_height="80dp"
+     android:layout_marginTop="485dp"
+     android:layout_marginStart="115dp"
+     android:background="@color/lytblu"
+     />
 
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="490dp"
+        android:layout_marginStart="135dp"
+        android:src="@drawable/wind"
+        />
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/wedir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="N"
+        android:layout_marginTop="490dp"
+        android:layout_marginStart="165dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/lytblack"
+        />
+
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginStart="35dp"
+        android:src="@drawable/climate"
+        />
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/wepressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="90"
+        android:layout_marginTop="540dp"
+        android:layout_marginStart="65dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/lytblack"
+        />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginStart="135dp"
+        android:src="@drawable/cloudy"
+        />
+
+    <com.kluivert.weada.customViews.Poppins
+        android:id="@+id/wevisibility"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="15"
+        android:layout_marginTop="540dp"
+        android:layout_marginStart="165dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:textColor="@color/lytblack"
+        />
+
+    </RelativeLayout>
 </RelativeLayout>
 </ScrollView>
