@@ -1,15 +1,15 @@
-package com.kluivert.weada.api
+package com.kluivert.weada.network
 
 import com.kluivert.weada.data.Current
-import com.kluivert.weada.data.Weather
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Query
 
+
 const val BASE_URL = "http://api.weatherstack.com/"
 const val API_KEY = "fe639f4dae008e046fac9795bbf91e55"
 
-interface WeatherNetwork {
+interface WeatherApi {
 
     @GET(value = "current")
     fun getCurrentWeatherAsync(

@@ -34,6 +34,7 @@
         >
 
         <com.kluivert.weada.customViews.Poppins
+            android:id="@+id/day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/weada"
@@ -70,6 +71,7 @@
         />
 
     <ImageView
+        android:id="@+id/imgdesc"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="210dp"
