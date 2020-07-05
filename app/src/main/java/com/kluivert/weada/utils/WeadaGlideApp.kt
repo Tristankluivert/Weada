@@ -1,7 +1,8 @@
-package com.kluivert.weada.utils.glide
+package com.kluivert.weada.utils
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule
 
 @GlideModule
-class WeadaGlideModule : AppGlideModule()
+class WeadaGlideApp : AppGlideModule() {
+}

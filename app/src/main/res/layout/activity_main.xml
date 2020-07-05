@@ -64,14 +64,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ughelli"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:textStyle="bold"
         android:layout_marginStart="35dp"
         android:layout_marginTop="160dp"
         />
 
     <ImageView
-        android:id="@+id/imgdesc"
+        android:id="@+id/imgdescrip"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginTop="210dp"
@@ -92,6 +92,7 @@
 
         <RelativeLayout
             tools:visibility="gone"
+            android:visibility="gone"
             android:id="@+id/errorlayout"
             android:layout_width="300dp"
             android:layout_height="450dp"
@@ -211,25 +212,7 @@
      />
 
 
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="490dp"
-        android:layout_marginStart="135dp"
-        android:src="@drawable/wind"
-        />
 
-    <com.kluivert.weada.customViews.Poppins
-        android:id="@+id/wedir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="N"
-        android:layout_marginTop="490dp"
-        android:layout_marginStart="165dp"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textColor="@color/lytblack"
-        />
 
 
     <ImageView
@@ -241,7 +224,7 @@
         />
 
     <com.kluivert.weada.customViews.Poppins
-        android:id="@+id/wepressure"
+        android:id="@+id/wewind"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="90"
@@ -255,7 +238,7 @@
     <ImageView
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="490dp"
         android:layout_marginStart="135dp"
         android:src="@drawable/cloudy"
         />
@@ -265,7 +248,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="15"
-        android:layout_marginTop="540dp"
+        android:layout_marginTop="490dp"
         android:layout_marginStart="165dp"
         android:textSize="15sp"
         android:textStyle="bold"

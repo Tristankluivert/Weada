@@ -1,20 +1,20 @@
 package com.kluivert.weada.network
 
-import com.kluivert.weada.data.Current
-import kotlinx.coroutines.Deferred
+
+import com.kluivert.weada.data.WeatherLocation
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-const val BASE_URL = "http://api.weatherstack.com/"
-const val API_KEY = "fe639f4dae008e046fac9795bbf91e55"
+const val BASE_URL = "https://www.metaweather.com/api/location/"
+
 
 interface WeatherApi {
 
-    @GET(value = "current")
-    fun getCurrentWeatherAsync(
-        @Query(value = "query") location: String,
-        @Query(value = "lang") language: String = "en"
-    ): Deferred<Current>
+    @GET("search?")
+    fun getCurrentWeather(
+        @Query("query") location: String
+    ): Call<List<WeatherLocation>>
 
 }
