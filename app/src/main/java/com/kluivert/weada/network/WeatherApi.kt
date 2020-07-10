@@ -2,19 +2,23 @@ package com.kluivert.weada.network
 
 
 import com.kluivert.weada.data.WeatherLocation
+import com.kluivert.weada.utils.Constants.Companion.APP_ID
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-const val BASE_URL = "https://www.metaweather.com/api/location/"
 
 
 interface WeatherApi {
 
-    @GET("search?")
+    @GET("weather?")
     fun getCurrentWeather(
-        @Query("query") location: String
-    ): Call<List<WeatherLocation>>
+        @Query("q") location: String,
+     @Query("appid") appid : String = APP_ID
+    ): Response<WeatherLocation>
+
+
 
 }

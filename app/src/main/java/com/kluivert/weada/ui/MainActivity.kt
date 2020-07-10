@@ -1,5 +1,6 @@
 package com.kluivert.weada.ui
 
+import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Address
 import android.location.Geocoder
@@ -15,13 +16,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.kluivert.weada.R
-import com.kluivert.weada.utils.GlideApp
+import com.kluivert.weada.repository.WeadaRepo
 import com.kluivert.weada.viewmodel.WeadaViewModel
+import com.kluivert.weada.viewmodel.WeadaViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.launch
 
@@ -43,16 +46,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
-        viewModel = ViewModelProvider(this).get(WeadaViewModel::class.java)
-     viewModel.currentWeada("ughelli")
-
-        viewModel.showProgress.observe(this, Observer {
-            if(it)
-                progBar.visibility = VISIBLE
-            else
-                progBar.visibility = GONE
-        })
+        val repo = WeadaRepo()
+        val factory = WeadaViewModelFactory(repo)
+        viewModel = ViewModelProviders.of(this,factory ).get(WeadaViewModel::class.java)
 
 
             getLocation()
@@ -80,6 +76,17 @@ class MainActivity : AppCompatActivity() {
 
         mFusedLocationProviderClient = FusedLocationProviderClient(this)
 
+        if (ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_FINE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
+                this,
+                Manifest.permission.ACCESS_COARSE_LOCATION
+            ) != PackageManager.PERMISSION_GRANTED
+        ) {
+
+            return
+        }
         mFusedLocationProviderClient.requestLocationUpdates(
             locationRequest, mLocationCallback,
             Looper.myLooper()
